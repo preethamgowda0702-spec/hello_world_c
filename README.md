@@ -1,19 +1,14 @@
-# C-Programming-Portfolio
-My first engineering portfolio containing C programming projects.
+# Hello World in C
 
-## Student Grade Calculator
+This repository contains my first Hello World program written in C.
 
-This is a simple C program that takes marks from the user and displays a grade.
+## Description
 
-## Concepts Used
-
-- Input and Output
-- Variables
-- if-else statements
+The program displays "Hello, World!" on the screen.
 
 ## How to Run
 
 Compile:
 
 ```bash
-.\main
+./hello
