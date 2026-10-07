@@ -9,6 +9,10 @@ The program displays "Hello, World!" on the screen.
 
 I am working on software development projects to improve my programming and problem-solving skills.
 
+## Projects
+
+I am working on software development projects to improve my programming and problem-solving skills.
+
 ## How to Run
 
 Compile:
