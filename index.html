@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="description"
+content="Personal portfolio of Preetham Gowda G., a B.Tech Computer Science student at REVA University."
+
+>
+
+  <title>Preetham Gowda G. | Computer Science Student</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    html {
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background: #f8fafc;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(90%, 1100px);
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #e5e7eb;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-container {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      flex-shrink: 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      position: relative;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #4b5563;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      background: #2563eb;
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: calc(100vh - 70px);
+      display: flex;
+      align-items: center;
+      padding: 90px 0;
+      background: linear-gradient(135deg, #eff6ff, #ffffff);
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 780px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 7px 14px;
+      margin-bottom: 20px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      margin-bottom: 20px;
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      color: #111827;
+    }
+
+    .hero h1 span {
+      color: #2563eb;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin-bottom: 30px;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: #4b5563;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #2563eb;
+      border: 1px solid #bfdbfe;
+    }
+
+    .btn-secondary:hover {
+      background: #eff6ff;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 0;
+      scroll-margin-top: 70px;
+    }
+
+    .section-heading {
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 8px;
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
+      line-height: 1.2;
+      color: #111827;
+    }
+
+    .section-heading p {
+      color: #6b7280;
+      font-size: 1rem;
+    }
+
+    /* ABOUT */
+
+    .about-card {
+      padding: 32px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .about-card p {
+      color: #4b5563;
+      font-size: 1.05rem;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      padding: 28px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .project-number {
+      margin-bottom: 12px;
+      color: #2563eb;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .project-card h3 {
+      margin-bottom: 12px;
+      color: #111827;
+      font-size: 1.15rem;
+      line-height: 1.3;
+    }
+
+    .project-card p {
+      flex-grow: 1;
+      margin-bottom: 18px;
+      color: #6b7280;
+    }
+
+    .project-link {
+      display: inline-block;
+      width: fit-content;
+      color: #2563eb;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .project-link:hover {
+      color: #1d4ed8;
+    }
+
+    .placeholder-label {
+      display: block;
+      margin-top: 7px;
+      color: #9ca3af;
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* LEETCODE */
+
+    .leetcode-section {
+      margin-top: 35px;
+      padding: 28px;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      border-radius: 16px;
+    }
+
+    .leetcode-section h3 {
+      margin-bottom: 8px;
+      color: #111827;
+      font-size: 1.2rem;
+    }
+
+    .leetcode-section p {
+      margin-bottom: 20px;
+      color: #4b5563;
+    }
+
+    .problem-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      list-style: none;
+    }
+
+    .problem-list li {
+      padding: 11px 14px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      color: #374151;
+      font-size: 0.95rem;
+    }
+
+    /* SKILLS */
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 10px 16px;
+      background: white;
+      border: 1px solid #dbeafe;
+      border-radius: 999px;
+      color: #1e40af;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-2px);
+      background: #eff6ff;
+    }
+
+    /* CAREER */
+
+    .career-card {
+      padding: 40px;
+      background: #111827;
+      border-radius: 18px;
+      color: white;
+    }
+
+    .career-card h2 {
+      margin-bottom: 15px;
+      font-size: clamp(1.7rem, 4vw, 2.1rem);
+    }
+
+    .career-card p {
+      max-width: 800px;
+      color: #d1d5db;
+      font-size: 1.05rem;
+    }
+
+    /* CONTACT */
+
+    .contact-card {
+      padding: 32px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+    }
+
+    .contact-card p {
+      margin-bottom: 18px;
+      color: #6b7280;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 16px;
+      background: #f3f4f6;
+      border-radius: 8px;
+      color: #374151;
+      font-weight: 600;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-2px);
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+      background: #111827;
+      color: #9ca3af;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* LARGE TABLETS */
+
+    @media (max-width: 950px) {
+      .nav-container {
+        min-height: 65px;
+      }
+
+      .nav-links {
+        gap: 17px;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 80px 0;
+      }
+    }
+
+    /* TABLETS */
+
+    @media (max-width: 768px) {
+      .container {
+        width: min(92%, 680px);
+      }
+
+      nav {
+        position: sticky;
+      }
+
+      .nav-container {
+        min-height: auto;
+        padding: 15px 0;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 12px 18px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        font-size: 0.88rem;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .hero-content {
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 30px;
+      }
+
+      .about-card,
+      .contact-card {
+        padding: 26px;
+      }
+
+      .career-card {
+        padding: 32px;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(92%, 500px);
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .hero-tag {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.3rem, 12vw, 3.4rem);
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .section-heading h2 {
+        font-size: 1.8rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .project-card {
+        padding: 24px;
+      }
+
+      .leetcode-section {
+        margin-top: 24px;
+        padding: 22px;
+      }
+
+      .problem-list {
+        grid-template-columns: 1fr;
+      }
+
+      .problem-list li {
+        font-size: 0.9rem;
+      }
+
+      .skills-list {
+        gap: 8px;
+      }
+
+      .skill {
+        padding: 9px 13px;
+        font-size: 0.88rem;
+      }
+
+      .career-card {
+        padding: 26px;
+        border-radius: 14px;
+      }
+
+      .career-card p {
+        font-size: 1rem;
+      }
+
+      .contact-card {
+        padding: 24px;
+      }
+
+      .contact-info {
+        flex-direction: column;
+      }
+
+      .contact-item {
+        width: 100%;
+      }
+    }
+
+    /* SMALL MOBILE */
+
+    @media (max-width: 400px) {
+      .container {
+        width: 90%;
+      }
+
+      .nav-links {
+        gap: 9px 13px;
+      }
+
+      .nav-links a {
+        font-size: 0.8rem;
+      }
+
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero-tag {
+        padding: 6px 10px;
+      }
+
+      .about-card,
+      .contact-card {
+        padding: 20px;
+      }
+
+      .project-card {
+        padding: 21px;
+      }
+
+      .leetcode-section {
+        padding: 18px;
+      }
+
+      .career-card {
+        padding: 22px;
+      }
+    }
+
+    /* ACCESSIBILITY */
+
+    :focus-visible {
+      outline: 3px solid #93c5fd;
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container nav-container">
+
+
+  <a href="#home" class="logo">
+    Preetham Gowda G<span>.</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#career">Career</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+</div>
+
+
+  </nav>
+
+  <!-- HERO -->
+
+  <header class="hero" id="home">
+
+
+<div class="container">
+
+  <div class="hero-content">
+
+    <span class="hero-tag">
+      3rd-Semester B.Tech Computer Science Student
+    </span>
+
+    <h1>
+      Hi, I'm <span>Preetham Gowda G.</span>
+    </h1>
+
+    <p>
+      A Computer Science student at REVA University, Bengaluru,
+      interested in software development, problem solving, and
+      learning new technologies.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#projects" class="btn btn-primary">
+        View My Work
+      </a>
+
+      <a href="#contact" class="btn btn-secondary">
+        Contact Me
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  </header>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+
+<div class="container">
+
+  <div class="section-heading">
+
+    <h2>About Me</h2>
+
+    <p>
+      A little about my academic and learning journey.
+    </p>
+
+  </div>
+
+  <div class="about-card">
+
+    <p>
+      I am Preetham Gowda G., a 3rd-semester B.Tech Computer Science
+      student at REVA University, Bengaluru. I am interested in
+      software development, problem solving, and continuously learning
+      new technologies. I am currently strengthening my programming,
+      data structures, algorithms, and software-development fundamentals
+      through coursework and practical learning activities.
+    </p>
+
+  </div>
+
+</div>
+
+
+  </section>
+
+  <!-- PROJECTS / LEARNING -->
+
+  <section id="projects">
+
+
+<div class="container">
+
+  <div class="section-heading">
+
+    <h2>Projects / Learning</h2>
+
+    <p>
+      Current repositories and practical learning activities.
+    </p>
+
+  </div>
+
+
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+
+    <article class="project-card">
+
+      <div class="project-number">
+        01
+      </div>
+
+      <h3>
+        Hello World GitHub Repository
+      </h3>
+
+      <p>
+        A beginner GitHub repository created as part of my learning
+        and practice with repositories, commits, and version control.
+      </p>
+
+      <a href="https://github.com/preethamgowda0702-spec/hello_world_c"
+         class="project-link"
+         target="_blank"
+         rel="noopener noreferrer">
+        GitHub Repository →
+      </a>
+
+    </article>
+
+
+    <!-- Project 2 -->
+
+    <article class="project-card">
+
+      <div class="project-number">
+        02
+      </div>
+
+      <h3>
+        Pair-Programming Collaboration
+      </h3>
+
+      <p>
+        A pair-programming collaboration activity focused on working
+        with another learner and practicing collaborative development
+        using Git and GitHub.
+      </p>
+
+      <a href="https://github.com/preethamgowda0702-spec/HackerRank-3rdSem-Portfolio"
+         class="project-link"
+         target="_blank"
+         rel="noopener noreferrer">
+        GitHub Repository →
+      </a>
+
+    </article>
+
+
+    <!-- Project 3 -->
+
+    <article class="project-card">
+
+      <div class="project-number">
+        03
+      </div>
+
+      <h3>
+        LeetCode Solutions
+      </h3>
+
+      <p>
+        A repository for documenting my LeetCode practice and improving
+        problem-solving and Data Structures and Algorithms skills.
+      </p>
+
+      <a href="https://github.com/preethamgowda0702-spec/leetcode-solutions"
+         class="project-link"
+         target="_blank"
+         rel="noopener noreferrer">
+        GitHub Repository →
+      </a>
+
+    </article>
+
+  </div>
+
+
+  <!-- LEETCODE PRACTICE -->
+
+  <div class="leetcode-section">
+
+    <h3>
+      LeetCode Practice Plan
+    </h3>
+
+    <p>
+      I am working through the following 8 LeetCode problems as part
+      of my programming and problem-solving practice. This list
+      represents my learning plan and does not mean that all problems
+      have been completed.
+    </p>
+
+    <ul class="problem-list">
+
+      <li>01. Two Sum</li>
+
+      <li>02. Reverse String</li>
+
+      <li>03. Valid Anagram</li>
+
+      <li>04. Max Consecutive Ones</li>
+
+      <li>05. Remove Element</li>
+
+      <li>06. Spiral Matrix</li>
+
+      <li>07. K-th Symbol in Grammar</li>
+
+      <li>08. Array Manipulation</li>
+
+    </ul>
+
+  </div>
+
+</div>
+
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+
+<div class="container">
+
+  <div class="section-heading">
+
+    <h2>
+      Skills
+    </h2>
+
+    <p>
+      Technologies and concepts I am learning and practicing.
+    </p>
+
+  </div>
+
+  <div class="skills-list">
+
+    <span class="skill">C</span>
+
+    <span class="skill">C++</span>
+
+    <span class="skill">Python</span>
+
+    <span class="skill">
+      Data Structures and Algorithms
+    </span>
+
+    <span class="skill">
+      Object-Oriented Programming
+    </span>
+
+    <span class="skill">
+      DBMS and SQL
+    </span>
+
+    <span class="skill">
+      Git and GitHub
+    </span>
+
+    <span class="skill">
+      Basic HTML
+    </span>
+
+    <span class="skill">
+      Problem Solving
+    </span>
+
+  </div>
+
+</div>
+
+
+  </section>
+
+  <!-- CAREER GOAL -->
+
+  <section id="career">
+
+
+<div class="container">
+
+  <div class="career-card">
+
+    <h2>
+      Career Goal
+    </h2>
+
+    <p>
+      My goal is to become a software developer by strengthening my
+      programming and Data Structures and Algorithms skills, building
+      practical projects, and gaining internship experience. I want
+      to continue learning technologies that help me become a stronger
+      problem solver and software developer.
+    </p>
+
+  </div>
+
+</div>
+
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+
+<div class="container">
+
+  <div class="section-heading">
+
+    <h2>
+      Contact
+    </h2>
+
+    <p>
+      Connect with me through my professional profiles.
+    </p>
+
+  </div>
+
+
+  <div class="contact-card">
+
+    <p>
+      You can connect with me through the links below.
+    </p>
+
+
+    <div class="contact-info">
+
+      <a href="https://github.com/preethamgowda0702-spec"
+         class="contact-item"
+         target="_blank"
+         rel="noopener noreferrer">
+        GitHub
+      </a>
+
+
+      <a href="https://www.linkedin.com/in/preethamgowda0702"
+         class="contact-item"
+         target="_blank"
+         rel="noopener noreferrer">
+        LinkedIn
+      </a>
+
+
+      <a href="https://leetcode.com/u/Preetham_Gowda_G_07_02/"
+         class="contact-item"
+         target="_blank"
+         rel="noopener noreferrer">
+        LeetCode
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+<div class="container">
+
+  <p>
+    © 2026 Preetham Gowda G. · Personal Portfolio
+  </p>
+
+</div>
+
+
+  </footer>
+
+</body>
+</html>
